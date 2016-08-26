@@ -2,12 +2,12 @@
 //  AppDelegate.m
 //  MCICafe
 //
-//  Created by Abdiel Avila Arias on 2/7/15.
-//  Copyright (c) 2015 Abdiel Avila Arias. All rights reserved.
+//  Created by Ivan Corchado Ruiz on 2/7/15.
+//  Copyright (c) 2015 Ivan Corchado Ruiz. All rights reserved.
 //
 
 #import "AppDelegate.h"
-
+#import <Parse/Parse.h>
 @interface AppDelegate ()
 
 @end
@@ -17,6 +17,18 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [[UITabBar appearance] setTintColor: [UIColor colorWithRed:0.122 green:0.737 blue:0.886 alpha:1]];
+    // [Optional] Power your app with Local Datastore. For more info, go to
+    // https://parse.com/docs/ios_guide#localdatastore/iOS
+    [Parse enableLocalDatastore];
+    
+    // Initialize Parse.
+    [Parse setApplicationId:@"IXxCcqayKRalDCq3BFrRMbOyL05wIXJM3hAJUEHI"
+                  clientKey:@"guxqT2yOPOKJOot7vKDO4ODDpgmrd5o2XELliLqi"];
+    
+    // [Optional] Track statistics around application opens.
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
     return YES;
 }
 
